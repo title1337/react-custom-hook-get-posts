@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function ViewPostPage() {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function ViewPostPage() {
     try {
       setIsError(false);
       setIsLoading(true);
-      const results = await axios("http://localhost:4000/posts");
+      const results = await axios('http://localhost:4000/posts');
       setPosts(results.data.data);
       setIsLoading(false);
     } catch (error) {
@@ -50,7 +50,7 @@ function ViewPostPage() {
         {isLoading ? <h1>Loading ....</h1> : null}
       </div>
 
-      <button onClick={() => navigate("/")}>Back to Home</button>
+      <button onClick={() => navigate('/')}>Back to Home</button>
     </div>
   );
 }
